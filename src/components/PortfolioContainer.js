@@ -25,6 +25,13 @@ const projects = [
         url: "https://vast-fjord-09411.herokuapp.com/",
         github: "https://github.com/Lemelisk27/tech-blog",
         img: "https://res.cloudinary.com/coder-mingle/image/upload/v1636442009/portfolio/qrjbjuxsur4j2drxavt2.png"
+    },
+    {
+        id: 4,
+        name: "Regional Holiday Calendar",
+        url: "https://lemelisk27.github.io/country-holiday/",
+        github: "https://github.com/Lemelisk27/country-holiday",
+        img: "https://res.cloudinary.com/coder-mingle/image/upload/v1636339745/portfolio/avc75k72nwow2qkq54zo.png"
     }
 ]
 
@@ -35,7 +42,13 @@ function PortfolioContainer () {
             return <Home />
         }
         if (currentPage === 'Portfolio') {
-            return <Portfolio projects={projects}/>
+            return (
+                <div className="zs-portfolio d-flex flex-row flex-wrap col-11 mt-4 mx-auto justify-content-center">
+                    {projects.map((item) => {
+                        return <Portfolio key={item.id} projects={item}/>
+                    })}
+                </div>
+            )
         }
     }
     const handlePageChange = (page) => setCurrentPage(page)
