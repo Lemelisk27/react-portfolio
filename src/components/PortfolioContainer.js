@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer"
 import Home from "./pages/Home"
 import Portfolio from "./pages/Portfolio";
+import Contact from "./pages/Contact";
 
 const projects = [
     {
@@ -49,6 +50,9 @@ function PortfolioContainer () {
                     })}
                 </div>
             )
+        }
+        if (currentPage === 'Contact') {
+            return <Contact />
         }
     }
     const handlePageChange = (page) => setCurrentPage(page)

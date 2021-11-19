@@ -50,3 +50,8 @@
 .zs-hover:hover {
     background: var(--hover)
 }
+
+#submitBtn {
+    background: var(--lighter);
+    color: var(--text)
+}
