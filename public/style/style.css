@@ -19,6 +19,10 @@
     --hover: #235789
 }
 
+.zs-body {
+    background: var(--dark);
+}
+
 .zs-nav {
     background: var(--lighter);
     color: var(--text);
@@ -48,8 +52,6 @@
     background: var(--dark)
 }
 
-.zs-body {
-    background: var(--dark);
+.zs-home {
     color: var(--text);
-    min-height: 85vh;
 }

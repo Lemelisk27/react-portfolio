@@ -8,7 +8,7 @@ const styles = {
 
 function Footer () {
     return (
-        <div className="zs-foot d-flex flex-row col-12" id="contact">
+        <div className="zs-foot d-flex flex-row col-12 fixed-bottom" id="contact">
         <div className="d-flex flex-row justify-content-between col-4 mx-auto align-items-center">
             <a href="mailto:Lemelisk27@gmail.com" className="p-1 rounded">
                 <img src="images/outline_email_white_24dp.png" alt="Email" style={styles.img}></img>
