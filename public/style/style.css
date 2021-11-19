@@ -1,0 +1,55 @@
+/* :root {
+    --dark: #2C3531;
+    --lighter: #116466;
+    --text: #D1E8E2;
+    --hover: #D9B08C
+} */
+
+/* :root {
+    --dark: #5D5C61;
+    --lighter: #557A95;
+    --text: white;
+    --hover: #7395AE
+} */
+
+:root {
+    --dark: #70163C;
+    --lighter: #120309;
+    --text: #D9D0DE;
+    --hover: #235789
+}
+
+.zs-nav {
+    background: var(--lighter);
+    color: var(--text);
+    font-family: "Segoe Print"
+}
+
+.zs-nav a {
+    color: var(--text);
+    font-size: larger;
+}
+
+.zs-nav a:hover {
+    color: var(--hover)
+}
+
+.zs-foot {
+    background: var(--lighter);
+    color: var(--text);
+    height: 75px
+}
+
+.zs-foot a {
+    color: var(--text)
+}
+
+.zs-foot a:hover {
+    background: var(--dark)
+}
+
+.zs-body {
+    background: var(--dark);
+    color: var(--text);
+    min-height: 85vh;
+}
