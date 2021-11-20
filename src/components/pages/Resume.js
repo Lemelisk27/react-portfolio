@@ -3,6 +3,7 @@ import React from "react";
 function Resume () {
     return (
         <div className="zs-resume d-flex flex-column col-9 mx-auto mt-3">
+            <a download="Zach-Smith-Resume.pdf" href="/images/Zach-Smith-Resume.pdf" className="mx-auto">Download as PDF</a>
             <div className="d-flex flex-column justify-content-center mx-auto col-5">
                 <h2 className="text-center mb-0 mt-5">Zach Smith</h2>
                 <p className="text-center mb-0">Maple Valley, WA</p>
