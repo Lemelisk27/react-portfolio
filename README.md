@@ -13,6 +13,8 @@ Dependencies:
 - @testing-library/react
 - @testing-library/user-event
 - Bootstrap
+- DotEnv
+- Emailjs-com
 - React
 - React-dom
 - React-scripts

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { validateEmail } from "../../utils/helpers"
+import emailjs from "emailjs-com"
 
 function Contact () {
     const [contactName, setContactName] = useState('')
@@ -27,15 +28,25 @@ function Contact () {
             setErrorMessage('The Name or Email is Invalid')
             return
         }
+        const mailOptions = {
+            from_name: contactName,
+            message: contactMessage,
+            reply_to: contactEmail
+        }
+        emailjs.send(process.env.REACT_APP_SERVICE, process.env.REACT_APP_TEMPLATE, mailOptions, process.env.REACT_APP_USER_ID)
+            .then((result) => {
+                console.log(result.text)
+            }, (error) => {
+                console.log(error.text)
+            })
         setContactName('')
         setContactEmail('')
         setContactMessage('')
-        alert(`Name: ${contactName}, Email: ${contactEmail}, Message: ${contactMessage}`)
     }
 
     return (
         <form className="d-flex flex-column col-6 mx-auto mt-5 form" onSubmit={handleFormSubmit}>
-            <label for="contactName">Your Name</label>
+            <label>Your Name</label>
             <input
                 value={contactName}
                 name="contactName"
@@ -44,7 +55,7 @@ function Contact () {
                 id="contactName"
                 className="col-6">
             </input>
-            <label for="contactEmail">Your Email</label>
+            <label>Your Email</label>
             <input
                 value={contactEmail}
                 name="contactEmail"
@@ -55,10 +66,10 @@ function Contact () {
             </input>
             {errorMessage && (
                 <>
-                <p class="bg-light text-danger rounded col-5 text-center px-2 my-2">{errorMessage}</p>
+                <p className="bg-light text-danger rounded col-5 text-center px-2 my-2">{errorMessage}</p>
                 </>
             )}
-            <label for="contactMessage">Message</label>
+            <label>Message</label>
             <textarea
                 value={contactMessage}
                 onChange={handleInputChange}
