@@ -45,7 +45,7 @@ function PortfolioContainer () {
         }
         if (currentPage === 'Portfolio') {
             return (
-                <div className="zs-portfolio d-flex flex-row flex-wrap col-11 mt-4 mx-auto justify-content-center">
+                <div className="zs-portfolio d-flex flex-row flex-wrap col-lg-11 col-sm-12 mt-4 mx-auto justify-content-center">
                     {projects.map((item) => {
                         return <Portfolio key={item.id} projects={item}/>
                     })}

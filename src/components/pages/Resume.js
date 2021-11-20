@@ -2,12 +2,12 @@ import React from "react";
 
 function Resume () {
     return (
-        <div className="zs-resume d-flex flex-column col-9 mx-auto mt-3">
+        <div className="zs-resume d-flex flex-column col-lg-9 col-12 mx-auto mt-3">
             <a download="Zach-Smith-Resume.pdf" href="/images/Zach-Smith-Resume.pdf" className="mx-auto">Download as PDF</a>
-            <div className="d-flex flex-column justify-content-center mx-auto col-5">
+            <div className="d-flex flex-column justify-content-center mx-auto col-lg-5 col-11">
                 <h2 className="text-center mb-0 mt-5">Zach Smith</h2>
                 <p className="text-center mb-0">Maple Valley, WA</p>
-                <div className="d-flex flex-row justify-content-around">
+                <div className="d-flex flex-row flex-wrap justify-content-around">
                     <p className="mb-0">Phone: 425-698-5340</p>
                     <p className="mb-0">Email: Lemelisk27@gmail.com</p>
                 </div>
@@ -36,12 +36,12 @@ function Resume () {
                 </div>
                 <p><u><strong>Experience</strong></u></p>
                 <div className="zs-indent">
-                    <div className="d-flex flex-row justify-content-between">
+                    <div className="d-flex flex-row flex-wrap justify-content-between">
                         <div>
                             <p className="mb-0"><strong>Wilson Logistics</strong></p>
                             <p className="mb-0">Truck Driver</p>
                         </div>
-                        <div className="d-flex flex-row">
+                        <div className="d-flex flex-row flex-wrap">
                             <p><strong>10-2018 -</strong></p>
                             <p><strong className="mx-1">04-2021</strong></p>
                         </div>
@@ -54,12 +54,12 @@ function Resume () {
                         <li>Maintained a log of working hours to be in compliance with state and federal laws.</li>
                         <li>Inspected my truck daily to ensure that any mechanical problems were fixed before driving.</li>
                     </ul>
-                    <div className="d-flex flex-row justify-content-between">
+                    <div className="d-flex flex-row justify-content-between flex-wrap">
                         <div>
                             <p className="mb-0"><strong>Internal Revenue Service</strong></p>
                             <p className="mb-0">Contact Representative</p>
                         </div>
-                        <div className="d-flex flex-row">
+                        <div className="d-flex flex-row flex-wrap">
                             <p><strong>11-2009 -</strong></p>
                             <p><strong className="mx-1">10-2018</strong></p>
                         </div>

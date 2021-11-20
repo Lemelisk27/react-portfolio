@@ -13,7 +13,8 @@
 .zs-nav {
     background: var(--lighter);
     color: var(--text);
-    font-family: "Segoe Print"
+    font-family: "Segoe Print";
+    height: 100px
 }
 
 .zs-nav a {
@@ -65,4 +66,24 @@
 
 .zs-indent {
     margin-left: 25px;
+}
+
+@media screen and (min-width: 992px) {
+    .zs-portfolio {
+        margin-bottom: 0%;
+    }
+
+    .zs-contact {
+        margin-bottom: 0%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .zs-portfolio {
+        margin-bottom: 25%;
+    }
+
+    .zs-contact {
+        margin-bottom: 25%;
+    }
 }

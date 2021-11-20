@@ -47,7 +47,7 @@ function Contact () {
     }
 
     return (
-        <form className="d-flex flex-column col-6 mx-auto mt-5 form" onSubmit={handleFormSubmit}>
+        <form className="zs-contact d-flex flex-column col-lg-6 col-11 mx-auto mt-5 form" onSubmit={handleFormSubmit}>
             <label>Your Name</label>
             <input
                 value={contactName}
@@ -55,7 +55,7 @@ function Contact () {
                 onChange={handleInputChange}
                 type="text"
                 id="contactName"
-                className="col-6">
+                className="col-lg-6">
             </input>
             <label>Your Email</label>
             <input
@@ -64,11 +64,11 @@ function Contact () {
                 onChange={handleInputChange}
                 type="text"
                 id="contactEmail"
-                className="col-6">
+                className="col-lg-6">
             </input>
             {errorMessage && (
                 <>
-                <p className="bg-light text-danger rounded col-5 text-center px-2 my-2">{errorMessage}</p>
+                <p className="bg-light text-danger rounded col-lg-5 col-9 text-center px-2 my-2">{errorMessage}</p>
                 </>
             )}
             <label>Message</label>
@@ -80,7 +80,7 @@ function Contact () {
                 cols="30"
                 rows="10">
             </textarea>
-            <button id="submitBtn" className="col-2 mx-auto mt-5 rounded border-0">Submit</button>
+            <button id="submitBtn" className="col-4 col-lg-2 mx-auto mt-5 rounded border-0">Submit</button>
             {sentMessage && (
                 <>
                 <p className="text-center mt-3">Your message has been sent. I will contact you as soon as I can.</p>
