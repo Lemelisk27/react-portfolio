@@ -20,7 +20,9 @@ function Navbar ({ currentPage, handlePageChange }) {
             <a href="#contact"
                 onClick={() => handlePageChange('Contact')}
                 className="mx-1">Contact</a>
-            <a href="#resume" className="mr-1">Resume</a>
+            <a href="#resume"
+                onClick={() => handlePageChange('Resume')}
+                className="mr-1">Resume</a>
         </div>
     </div>
     )

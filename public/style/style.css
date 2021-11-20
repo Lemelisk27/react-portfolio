@@ -55,3 +55,14 @@
     background: var(--lighter);
     color: var(--text)
 }
+
+.zs-resume {
+    background: white;
+    color: black;
+    margin-bottom: 10%;
+    box-shadow: 10px 10px 5px black;
+}
+
+.zs-indent {
+    margin-left: 25px;
+}

@@ -7,6 +7,7 @@ function Contact () {
     const [contactEmail, setContactEmail] = useState('')
     const [contactMessage, setContactMessage] = useState('')
     const [errorMessage, setErrorMessage] = useState('')
+    const [sentMessage, setSentMessage] = useState(false)
 
     const handleInputChange = (e) => {
         const { target } = e
@@ -39,6 +40,7 @@ function Contact () {
             }, (error) => {
                 console.log(error.text)
             })
+        setSentMessage(!sentMessage)
         setContactName('')
         setContactEmail('')
         setContactMessage('')
@@ -79,6 +81,11 @@ function Contact () {
                 rows="10">
             </textarea>
             <button id="submitBtn" className="col-2 mx-auto mt-5 rounded border-0">Submit</button>
+            {sentMessage && (
+                <>
+                <p className="text-center mt-3">Your message has been sent. I will contact you as soon as I can.</p>
+                </>
+            )}
         </form>
     )
 }
