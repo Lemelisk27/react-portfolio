@@ -44,6 +44,10 @@
     color: var(--text);
 }
 
+.zs-portfolio {
+    margin-bottom: 10%;
+}
+
 .zs-portfolio h2 {
     color: black
 }
@@ -68,10 +72,7 @@
     margin-left: 25px;
 }
 
-@media screen and (min-width: 992px) {
-    .zs-portfolio {
-        margin-bottom: 10%;
-    }
+@media screen and (min-width: 769px) {
 
     .zs-contact {
         margin-bottom: 0%;
