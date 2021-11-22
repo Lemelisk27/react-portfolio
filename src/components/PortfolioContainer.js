@@ -34,6 +34,27 @@ const projects = [
         url: "https://lemelisk27.github.io/country-holiday/",
         github: "https://github.com/Lemelisk27/country-holiday",
         img: "https://res.cloudinary.com/coder-mingle/image/upload/v1636339745/portfolio/avc75k72nwow2qkq54zo.png"
+    },
+    {
+        id: 5,
+        name: "Weather Dashboard",
+        url: "https://lemelisk27.github.io/weather-dashboard/",
+        github: "https://github.com/Lemelisk27/weather-dashboard",
+        img: "https://res.cloudinary.com/coder-mingle/image/upload/v1636339743/portfolio/hpr61takcpt72dcsjsop.png"
+    },
+    {
+        id: 6,
+        name: "Regex Tutorial - Gist",
+        url: "https://gist.github.com/Lemelisk27/05f69dc4b57288ca3313ea1c3749a31e",
+        github: "https://gist.github.com/Lemelisk27/05f69dc4b57288ca3313ea1c3749a31e",
+        img: "https://res.cloudinary.com/coder-mingle/image/upload/v1637546026/portfolio/regex_rdoq5r.png"
+    },
+    {
+        id: 7,
+        name: "Note Taker",
+        url: "https://whispering-everglades-03607.herokuapp.com/",
+        github: "https://github.com/Lemelisk27/note-taker",
+        img: "https://res.cloudinary.com/coder-mingle/image/upload/v1637546370/portfolio/notes_rkdopt.png"
     }
 ]
 

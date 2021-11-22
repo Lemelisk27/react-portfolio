@@ -16,6 +16,9 @@ function Footer () {
             <a href="https://github.com/Lemelisk27/" target="_blank" rel='noreferrer noopener' className="p-1 rounded">
                 <img src="images/GitHub-Mark-Light-64px.png" alt="GitHub"></img>
             </a>
+            <a href="https://stackoverflow.com/users/story/16541309" target="_blank" rel='noreferrer noopener' className="p-1 rounded">
+                <img src="images/stackoverflow.png" alt="StackOverflow" style={styles.img}></img>
+            </a>
             <a href="https://www.linkedin.com/in/Lemelisk27/" target="_blank" rel='noreferrer noopener' className="p-1 rounded">
                 <img src="images/LI-In-Bug.png" alt="LinkedIn" style={styles.img}></img>
             </a>

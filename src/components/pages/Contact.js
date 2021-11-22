@@ -7,6 +7,7 @@ function Contact () {
     const [contactEmail, setContactEmail] = useState('')
     const [contactMessage, setContactMessage] = useState('')
     const [errorMessage, setErrorMessage] = useState('')
+    const [messageError, setMessgeError] = useState('')
     const [sentMessage, setSentMessage] = useState(false)
 
     const handleInputChange = (e) => {
@@ -27,6 +28,10 @@ function Contact () {
         e.preventDefault()
         if (!validateEmail(contactEmail) || !contactName) {
             setErrorMessage('The Name or Email is Invalid')
+            return
+        }
+        if (!contactMessage) {
+            setMessgeError('A Message is Required')
             return
         }
         const mailOptions = {
@@ -80,6 +85,11 @@ function Contact () {
                 cols="30"
                 rows="10">
             </textarea>
+            {messageError && (
+                <>
+                <p className="bg-light text-danger rounded col-lg-5 col-9 text-center px-2 my-2">{messageError}</p>
+                </>
+            )}
             <button id="submitBtn" className="col-4 col-lg-2 mx-auto mt-5 rounded border-0">Submit</button>
             {sentMessage && (
                 <>
