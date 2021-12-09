@@ -9,48 +9,41 @@ import Resume from "./pages/Resume";
 const projects = [
     {
         id: 1,
-        name: "Workout Tracker",
-        url: "https://enigmatic-citadel-42972.herokuapp.com/",
-        github: "https://github.com/Lemelisk27/workout-tracker",
-        img: "https://res.cloudinary.com/coder-mingle/image/upload/v1636830881/portfolio/hdsaqoalwus6brv3zy0g.png"
+        name: "Vet's Best Friend",
+        url: "https://vetbestfriend.herokuapp.com/",
+        github: "https://github.com/Lemelisk27/vbf-front",
+        img: "https://res.cloudinary.com/coder-mingle/image/upload/v1639035452/portfolio/landing_vvitmf.png"
     },
     {
         id: 2,
-        name: "Coder Mingle",
-        url: "https://coder-mingle.herokuapp.com/",
-        github: "https://github.com/Project2-Team-5/Coder-Mingle",
-        img: "https://res.cloudinary.com/coder-mingle/image/upload/v1636441775/portfolio/szo9opaqb7uewwejdn1y.png"
-    },
-    {
-        id: 3,
         name: "Tech Blog",
         url: "https://vast-fjord-09411.herokuapp.com/",
         github: "https://github.com/Lemelisk27/tech-blog",
         img: "https://res.cloudinary.com/coder-mingle/image/upload/v1636442009/portfolio/qrjbjuxsur4j2drxavt2.png"
     },
     {
-        id: 4,
+        id: 3,
         name: "Regional Holiday Calendar",
         url: "https://lemelisk27.github.io/country-holiday/",
         github: "https://github.com/Lemelisk27/country-holiday",
         img: "https://res.cloudinary.com/coder-mingle/image/upload/v1636339745/portfolio/avc75k72nwow2qkq54zo.png"
     },
     {
-        id: 5,
+        id: 4,
         name: "Weather Dashboard",
         url: "https://lemelisk27.github.io/weather-dashboard/",
         github: "https://github.com/Lemelisk27/weather-dashboard",
         img: "https://res.cloudinary.com/coder-mingle/image/upload/v1636339743/portfolio/hpr61takcpt72dcsjsop.png"
     },
     {
-        id: 6,
+        id: 5,
         name: "Regex Tutorial - Gist",
         url: "https://gist.github.com/Lemelisk27/05f69dc4b57288ca3313ea1c3749a31e",
         github: "https://gist.github.com/Lemelisk27/05f69dc4b57288ca3313ea1c3749a31e",
         img: "https://res.cloudinary.com/coder-mingle/image/upload/v1637546026/portfolio/regex_rdoq5r.png"
     },
     {
-        id: 7,
+        id: 6,
         name: "Note Taker",
         url: "https://whispering-everglades-03607.herokuapp.com/",
         github: "https://github.com/Lemelisk27/note-taker",

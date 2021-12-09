@@ -26,11 +26,11 @@ function Resume () {
             </div>
             <div className="d-flex flex-column justify-content-center mx-auto col-10">
                 <p><u><strong>About Me</strong></u></p>
-                <p className="zs-indent">I am in the process of obtaining a Web Development Certificate from the University of Washington. My years as a long distance truck driver have given me the ability to work independently, with minimal supervision, while still completing goals and deadlines. When I worked for the IRS, it gave me the ability to work in a diverse environment with people from all walks of life.</p>
+                <p className="zs-indent">I recently obtained my Web Development Certificate from the University of Washington. My years as a long distance truck driver have given me the ability to work independently, with minimal supervision, while still completing goals and deadlines. When I worked for the IRS, it gave me the ability to work in a diverse environment with people from all walks of life.</p>
                 <p><u><strong>Skills</strong></u></p>
                 <div className="zs-indent mb-3">
                     <p className="mb-0"><strong>Industry Knowledge: </strong>Programming, web development, web design, time management</p>
-                    <p className="mb-0"><strong>Tools and Technologies: </strong>HTML, Cascading Style Sheets (CSS), JavaScript, Bootstrap, Git, API testing</p>
+                    <p className="mb-0"><strong>Tools and Technologies: </strong>HTML, Cascading Style Sheets (CSS), JavaScript, Bootstrap, Git, API testing, React.js, MySQL, Express.js, Handlebars.js</p>
                     <p className="mb-0"><strong>Interpersonal Skills: </strong>Problem solving, customer service, creative problem solving, critical thinking, teamwork</p>
                     <p className="mb-0"><strong>Other Skills: </strong>Independent projects, independent travel, CDL Class A, truck driving</p>
                 </div>
