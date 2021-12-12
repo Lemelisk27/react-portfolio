@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Portfolio (props) {
+function Projects (props) {
     const [currentState, setCurrentState] = useState(false)
     const toggleHover = () => {
         setCurrentState(!currentState)
@@ -30,4 +30,4 @@ function Portfolio (props) {
     }
 }
 
-export default Portfolio
+export default Projects

@@ -1,10 +1,5 @@
-import React, { useState } from "react";
-import Navbar from "./Navbar";
-import Footer from "./Footer"
-import Home from "./pages/Home"
-import Portfolio from "./pages/Portfolio";
-import Contact from "./pages/Contact";
-import Resume from "./pages/Resume";
+import React from "react";
+import Projects from "../../components/Projects"
 
 const projects = [
     {
@@ -51,36 +46,14 @@ const projects = [
     }
 ]
 
-function PortfolioContainer () {
-    const [currentPage, setCurrentPage] = useState('Home')
-    const renderPage = () => {
-        if (currentPage === 'Home') {
-            return <Home />
-        }
-        if (currentPage === 'Portfolio') {
-            return (
-                <div className="zs-portfolio d-flex flex-row flex-wrap col-lg-11 col-sm-12 mt-4 mx-auto justify-content-center">
-                    {projects.map((item) => {
-                        return <Portfolio key={item.id} projects={item}/>
-                    })}
-                </div>
-            )
-        }
-        if (currentPage === 'Contact') {
-            return <Contact />
-        }
-        else {
-            return <Resume />
-        }
-    }
-    const handlePageChange = (page) => setCurrentPage(page)
+function Portfolio () {
     return (
-        <div>
-            <Navbar currentPage={currentPage} handlePageChange={handlePageChange} />
-            {renderPage()}
-            <Footer />
+        <div className="zs-portfolio d-flex flex-row flex-wrap col-lg-11 col-sm-12 mt-4 mx-auto justify-content-center">
+        {projects.map((item) => {
+            return <Projects key={item.id} projects={item}/>
+        })}
         </div>
-    )
+    )    
 }
 
-export default PortfolioContainer
+export default Portfolio
