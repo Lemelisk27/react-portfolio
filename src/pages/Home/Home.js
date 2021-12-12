@@ -1,12 +1,26 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
+import API from "../../utils/API";
 
 function Home () {
+    const [user, setUser] = useState({})
+
+    useEffect(()=>{
+        API.getUsers()
+        .then(res=>{
+            setUser(res.data[0])
+        })
+        .catch(err=>{
+            console.log(err)
+        })
+        // eslint-disable-next-line
+    },[])
+
     return (
         <div className="zs-home d-flex flex-column col-12 p-5">
         <div className="col-lg-9 col-sm-12 mx-auto mb-5">
             <h1>About Me</h1>
-            <img src="images/016.JPG" className="col-3 my-4 rounded" alt="My Pic"/>
-            <p>I recently obtained my Web Development Certificate from the University of Washington. My years as a long distance truck driver have given me the ability to work independently, with minimal supervision, while still completing goals and deadlines. When I worked for the IRS, it gave me the ability to work in a diverse environment with people from all walks of life.</p>
+            <img src={user.img} className="col-3 my-4 rounded" alt="My Pic"/>
+            <p>{user.about}</p>
         </div>
     </div>
     )
