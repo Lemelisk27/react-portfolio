@@ -1,8 +1,10 @@
 import React from "react";
+import "./style.css"
 
 function Resume () {
     return (
-        <div className="zs-resume d-flex flex-column col-lg-9 col-12 mx-auto mt-3">
+        <div className="zs-resume d-flex flex-column col-12 overflow-auto">
+        <div className="zs-resumebody d-flex flex-column col-lg-9 col-12 mx-auto mt-3">
             <a download="Zach-Smith-Resume.pdf" href="/images/Zach-Smith-Resume.pdf" className="mx-auto">Download as PDF</a>
             <div className="d-flex flex-column justify-content-center mx-auto col-lg-5 col-11">
                 <h2 className="text-center mb-0 mt-5">Zach Smith</h2>
@@ -87,6 +89,7 @@ function Resume () {
                     </ul>
                 </div>
             </div>
+        </div>
         </div>
     )
 }

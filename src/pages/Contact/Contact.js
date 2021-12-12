@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { validateEmail } from "../../utils/helpers"
 import emailjs from "emailjs-com"
+import "./style.css"
 
 function Contact () {
     const [contactName, setContactName] = useState('')
@@ -52,7 +53,8 @@ function Contact () {
     }
 
     return (
-        <form className="zs-contact d-flex flex-column col-lg-6 col-11 mx-auto mt-5 form" onSubmit={handleFormSubmit}>
+        <div className="zs-contact d-flex flex-column col-12 overflow-auto">
+        <form className="d-flex flex-column col-lg-6 col-11 mx-auto mt-5 form" onSubmit={handleFormSubmit}>
             <label>Your Name</label>
             <input
                 value={contactName}
@@ -97,6 +99,7 @@ function Contact () {
                 </>
             )}
         </form>
+        </div>
     )
 }
 

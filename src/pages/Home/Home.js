@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import API from "../../utils/API";
+import "./style.css"
 
 function Home () {
     const [user, setUser] = useState({})

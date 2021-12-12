@@ -1,0 +1,13 @@
+.zs-resume {
+    min-height: calc(100vh - 175px);
+    max-height: calc(100vh - 175px);
+    background: #70163C;
+    color: #D9D0DE
+}
+
+.zs-resumebody {
+    background: white;
+    color: black;
+    margin-bottom: 2%;
+    box-shadow: 10px 10px 5px black;
+}

@@ -1,0 +1,10 @@
+.zs-portfolio {
+    min-height: calc(100vh - 175px);
+    max-height: calc(100vh - 175px);
+    background: #70163C;
+    color: #D9D0DE
+}
+
+.zs-portfolio h2 {
+    color: black
+}

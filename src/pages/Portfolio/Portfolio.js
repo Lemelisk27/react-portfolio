@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.css"
 import Projects from "../../components/Projects"
 
 const projects = [
@@ -48,10 +49,10 @@ const projects = [
 
 function Portfolio () {
     return (
-        <div className="zs-portfolio d-flex flex-row flex-wrap col-lg-11 col-sm-12 mt-4 mx-auto justify-content-center">
-        {projects.map((item) => {
-            return <Projects key={item.id} projects={item}/>
-        })}
+        <div className="zs-portfolio d-flex flex-row flex-wrap col-12 m-0 justify-content-center overflow-auto">
+            {projects.map((item) => {
+                return <Projects key={item.id} projects={item}/>
+            })}
         </div>
     )    
 }

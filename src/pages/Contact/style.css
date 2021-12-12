@@ -1,0 +1,11 @@
+.zs-contact {
+    min-height: calc(100vh - 175px);
+    max-height: calc(100vh - 175px);
+    background: #70163C;
+    color: #D9D0DE
+}
+
+#submitBtn {
+    background: #120309;
+    color: #D9D0DE
+}
