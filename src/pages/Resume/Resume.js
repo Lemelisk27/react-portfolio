@@ -97,7 +97,7 @@ function Resume () {
             fontFamily: 'Roboto-Bold',
             marginTop: 10,
             textDecoration: "underline",
-            // fontWeight: "bold"
+            fontWeight: "bold"
         },
         bodytext: {
             marginLeft: 20,

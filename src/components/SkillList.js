@@ -4,7 +4,8 @@ import {Text, StyleSheet} from "@react-pdf/renderer"
 function SkillList (props) {
     const skillStyles = StyleSheet.create({
         skill: {
-            fontFamily: 'Roboto-Bold'
+            fontFamily: 'Roboto-Bold',
+            fontWeight: 'bold'
         },
         skillList: {
             fontFamily: 'Roboto'

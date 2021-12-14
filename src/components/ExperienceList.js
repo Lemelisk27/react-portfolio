@@ -19,7 +19,8 @@ function ExperienceList (props) {
 
     const expStyles = StyleSheet.create({
         bold: {
-            fontFamily: 'Roboto-Bold'
+            fontFamily: 'Roboto-Bold',
+            fontWeight: 'bold'
         },
         titles: {
             flexDirection: 'row',
