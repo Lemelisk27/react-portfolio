@@ -1,0 +1,15 @@
+.zs-adminnav {
+    background: #120309;
+    color: #D9D0DE;
+    font-family: "Segoe Print";
+    height: 100px
+}
+
+.zs-adminnav a {
+    color: #D9D0DE;
+    font-size: larger;
+}
+
+.zs-adminnav a:hover {
+    color: #235789
+}

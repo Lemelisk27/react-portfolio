@@ -5,6 +5,9 @@ import axios from "axios";
 const URL_PREFIX = "https://lemelisk27-back.herokuapp.com"
 
 const API = {
+    Login:(data)=>{
+        return axios.post(`${URL_PREFIX}/api/users/login`, data)
+    },
     getUsers:()=>{
         return axios.get(`${URL_PREFIX}/api/users`)
     },

@@ -9,14 +9,18 @@ This is my protfolio, it was written useing react. It includes examples of my wo
 - [License](#license)
 ## Installation
 Dependencies:
+- @react-pdb/renderer
 - @testing-library/jest-dom
 - @testing-library/react
 - @testing-library/user-event
+- Axios
 - Bootstrap
 - DotEnv
 - Emailjs-com
+- Jwt-decode
 - React
 - React-dom
+- React-router-dom
 - React-scripts
 - Web-vitals
 ## Usage

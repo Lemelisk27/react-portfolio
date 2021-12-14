@@ -1,5 +1,6 @@
 import React, {Fragment, useState, useEffect} from "react";
-import {BrowserRouter as Router,Routes,Route,Navigate} from "react-router-dom"
+import {BrowserRouter as Router,Routes,Route} from "react-router-dom"
+import AuthRoute from "./utils/AuthRoute";
 import API from "./utils/API"
 import Navbar from "./pages/Navbar/Navbar";
 import Footer from "./pages/Footer/Footer";
@@ -8,6 +9,11 @@ import Contact from "./pages/Contact/Contact"
 import Resume from "./pages/Resume/Resume"
 import Portfolio from "./pages/Portfolio/Portfolio";
 import Error from "./pages/Error/Error"
+import Login from "./pages/Login/Login"
+import AdminNav from "./pages/AdminNav/AdminNav"
+import EditProfile from "./pages/EditProfile/EditProfile"
+import EditPortfolio from "./pages/EditPortfolio/EditPortfolio";
+import EditResume from "./pages/EditResume/EditResume";
 
 const App = () => {
     const [user, setUser] = useState({})
@@ -55,6 +61,31 @@ const App = () => {
                             <Footer />                        
                         </>
                     }/>
+                    <Route exact path="/login" element={<Login />}/>
+                    <Route exaxt path="/editprofile" element={<AuthRoute/>}>
+                        <Route exact path="/editprofile" element={
+                            <>
+                                <AdminNav />
+                                <EditProfile />
+                            </>
+                        }/>
+                    </Route>
+                    <Route exaxt path="/editportfolio" element={<AuthRoute/>}>
+                        <Route exact path="/editportfolio" element={
+                            <>
+                                <AdminNav />
+                                <EditPortfolio />
+                            </>
+                        }/>
+                    </Route>
+                    <Route exaxt path="/editresume" element={<AuthRoute/>}>
+                        <Route exact path="/editresume" element={
+                            <>
+                                <AdminNav />
+                                <EditResume />
+                            </>
+                        }/>
+                    </Route>
                     <Route path="*" element={<Error />}/>
                 </Routes>
             </Fragment>
