@@ -10,6 +10,24 @@ const API = {
     },
     getProjects:()=>{
         return axios.get(`${URL_PREFIX}/api/projects`)
+    },
+    getUserResume:(id)=>{
+        return axios.get(`${URL_PREFIX}/api/resumes/userresume/${id}`)
+    },
+    getSkills:(id)=>{
+        return axios.get(`${URL_PREFIX}/api/resumes/skills/${id}`)
+    },
+    getExperience:(id)=>{
+        return axios.get(`${URL_PREFIX}/api/resumes/experience/${id}`)
+    },
+    getRoles:(id)=>{
+        return axios.get(`${URL_PREFIX}/api/resumes/roles/${id}`)
+    },
+    getEducation:(id)=>{
+        return axios.get(`${URL_PREFIX}/api/resumes/education/${id}`)
+    },
+    getDegree:(id)=>{
+        return axios.get(`${URL_PREFIX}/api/resumes/degree/${id}`)
     }
 }
 

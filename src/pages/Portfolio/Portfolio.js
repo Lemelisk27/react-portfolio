@@ -9,7 +9,6 @@ function Portfolio () {
     useEffect(()=>{
         API.getProjects()
         .then(res=>{
-            console.log(res.data)
             setProjects(res.data)
         })
         .catch(err=>{

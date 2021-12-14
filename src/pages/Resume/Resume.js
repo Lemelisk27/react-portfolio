@@ -1,95 +1,153 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "./style.css"
+import {PDFViewer, Page, Text, View, Document, StyleSheet, Link, Font} from "@react-pdf/renderer"
+import API from "../../utils/API"
+import SkillList from "../../components/SkillList"
+import ExperienceList from "../../components/ExperienceList"
+import EducationList from "../../components/EducationList"
 
 function Resume () {
+    const [user, setUser] = useState({})
+    const [skillList, setSkillList] = useState([])
+    const [experenceList, setExperenceList] = useState([])
+    const [eduList, setEduList] = useState([])
+
+    useEffect(()=>{
+        API.getUsers()
+        .then(res=>{
+            setUser(res.data[0])
+            const userid = res.data[0].id
+            API.getUserResume(userid)
+            .then(res=>{
+                const ResumeId = res.data.id
+                API.getSkills(ResumeId)
+                .then(res=>{
+                    setSkillList(res.data)
+                    API.getExperience(ResumeId)
+                    .then(res=>{
+                        setExperenceList(res.data)
+                        API.getEducation(ResumeId)
+                        .then(res=>{
+                            setEduList(res.data)
+                        })
+                        .catch(err=>{
+                            console.log(err)
+                        })
+                    })
+                    .catch(err=>{
+                        console.log(err)
+                    })
+                })
+                .catch(err=>{
+                    console.log(err)
+                })
+            })
+            .catch(err=>{
+                console.log(err)
+            })
+        })
+        .catch(err=>{
+            console.log(err)
+        })
+        // eslint-disable-next-line
+    },[])
+
+    Font.register({
+        family: 'Roboto',
+        src: "http://fonts.gstatic.com/s/roboto/v15/W5F8_SL0XFawnjxHGsZjJA.ttf",
+    })
+
+    Font.register({
+        family: 'Roboto-Bold',
+        src: 'http://fonts.gstatic.com/s/roboto/v15/bdHGHleUa-ndQCOrdpfxfw.ttf'
+    })
+
+    const styles = StyleSheet.create({
+        page: {
+            fontSize: 11,
+            display: "flex",
+            flexDirection: 'column',
+            backgroundColor: 'white',
+            paddingHorizontal: 30,
+            paddingVertical: 20,
+            fontFamily: 'Roboto',
+        },
+        header: {
+            display: "flex",
+            width: "100%",
+            alignSelf: "flex-start",
+            marginLeft: "auto",
+            marginRight: "auto",
+            alignItems: "center",
+            marginBottom: 10
+        },
+        name: {
+            fontSize: 20,
+        },
+        headertext: {
+            display: "flex",
+            alignItems: "center"
+        },
+        contacttext: {
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center"
+        },
+        bodytitles: {
+            fontFamily: 'Roboto-Bold',
+            marginTop: 10,
+            textDecoration: "underline",
+            // fontWeight: "bold"
+        },
+        bodytext: {
+            marginLeft: 20,
+            marginTop: 10
+        }
+    })
+
     return (
         <div className="zs-resume d-flex flex-column col-12 overflow-auto">
-        <div className="zs-resumebody d-flex flex-column col-lg-9 col-12 mx-auto mt-3">
-            <a download="Zach-Smith-Resume.pdf" href="/images/Zach-Smith-Resume.pdf" className="mx-auto">Download as PDF</a>
-            <div className="d-flex flex-column justify-content-center mx-auto col-lg-5 col-11">
-                <h2 className="text-center mb-0 mt-5">Zach Smith</h2>
-                <p className="text-center mb-0">Maple Valley, WA</p>
-                <div className="d-flex flex-row flex-wrap justify-content-around">
-                    <p className="mb-0">Phone: 425-698-5340</p>
-                    <p className="mb-0">Email: Lemelisk27@gmail.com</p>
-                </div>
-                <div className="d-flex flex-row justify-content-center">
-                    <p className="pr-1 mb-0">LinkedIn:</p>
-                    <a className="mb-0 mx-1" href="http://www.linkedin.com/in/Lemelisk27">http://www.linkedin.com/in/Lemelisk27</a>
-                </div>
-                <div className="d-flex flex-row justify-content-center">
-                    <p className="pr-1 mb-0">GitHub:</p>
-                    <a className="mb-0 mx-1" href="https://github.com/Lemelisk27">https://github.com/Lemelisk27</a>
-                </div>
-                <div className="d-flex flex-row justify-content-center">
-                    <p className="pr-1 mb-0">Portfolio:</p>
-                    <a className="mb-0 mx-1" href="https://lemelisk27.herokuapp.com/">https://lemelisk27.herokuapp.com/</a>
-                </div>
+            <div className="zs-resumebody d-flex flex-column col-lg-9 col-12 mx-auto mt-3">
+                <PDFViewer width="100%" height="680px">
+                <Document
+                    title="Zach Smith's Resume"
+                    author="Zach Smith"
+                    subject="Zach Smith's Resume">
+                    <Page size="A4" style={styles.page}>
+                        <View style={styles.header}>
+                            <Text style={styles.name}>{user.first_name} {user.last_name}</Text>
+                            <View style={styles.headertext}>
+                                <Text>{user.city}, {user.state}</Text>
+                                <View style={styles.contacttext}>
+                                    <Text>Phone: {user.phone}</Text>
+                                    <Text>       </Text>
+                                    <Text>Email: {user.email}</Text>
+                                </View>
+                                <Text>LinkedIn: <Link src={user.linkedin}>{user.linkedin}</Link></Text>
+                                <Text>GitHub: <Link src={user.github}>{user.github}</Link></Text>
+                                <Text>Portfolio: <Link src={user.portfolio}>{user.portfolio}</Link></Text>
+                            </View>
+                        </View>
+                        <View>
+                            <Text style={styles.bodytitles}>About Me</Text>
+                            <Text style={styles.bodytext}>{user.about}</Text>
+                            <Text style={styles.bodytitles}>Skills</Text>
+                            <View style={styles.bodytext}>
+                                {skillList.map(item => <SkillList key={item.id} title={item.title} skills={item.skills}/>)}
+                            </View>
+                            <Text style={styles.bodytitles}>Experence</Text>
+                            <View style={styles.bodytext}>
+                                {experenceList.map(item => <ExperienceList key={item.id} exp={item}/>)}
+                            </View>
+                            <Text style={styles.bodytitles}>Education</Text>
+                            <View style={styles.bodytext}>
+                                {eduList.map(item => <EducationList key={item.id} edu={item}/>)}
+                            </View>
+                        </View>
+                    </Page>
+                </Document>
+                </PDFViewer>
             </div>
-            <div className="d-flex flex-column justify-content-center mx-auto col-10">
-                <p><u><strong>About Me</strong></u></p>
-                <p className="zs-indent">I recently obtained my Web Development Certificate from the University of Washington. My years as a long distance truck driver have given me the ability to work independently, with minimal supervision, while still completing goals and deadlines. When I worked for the IRS, it gave me the ability to work in a diverse environment with people from all walks of life.</p>
-                <p><u><strong>Skills</strong></u></p>
-                <div className="zs-indent mb-3">
-                    <p className="mb-0"><strong>Industry Knowledge: </strong>Programming, web development, web design, time management</p>
-                    <p className="mb-0"><strong>Tools and Technologies: </strong>HTML, Cascading Style Sheets (CSS), JavaScript, Bootstrap, Git, API testing, React.js, MySQL, Express.js, Handlebars.js</p>
-                    <p className="mb-0"><strong>Interpersonal Skills: </strong>Problem solving, customer service, creative problem solving, critical thinking, teamwork</p>
-                    <p className="mb-0"><strong>Other Skills: </strong>Independent projects, independent travel, CDL Class A, truck driving</p>
-                </div>
-                <p><u><strong>Experience</strong></u></p>
-                <div className="zs-indent">
-                    <div className="d-flex flex-row flex-wrap justify-content-between">
-                        <div>
-                            <p className="mb-0"><strong>Wilson Logistics</strong></p>
-                            <p className="mb-0">Truck Driver</p>
-                        </div>
-                        <div className="d-flex flex-row flex-wrap">
-                            <p><strong>10-2018 -</strong></p>
-                            <p><strong className="mx-1">04-2021</strong></p>
-                        </div>
-                    </div>
-                    <ul>
-                        <li>Drove a Truck for pickup and deliveries anywhere in the lower 48 states.</li>
-                        <li>Coordinated my schedule with dispatchers.</li>
-                        <li>Obeyed and followed local and federal traffic laws.</li>
-                        <li>Secured cargo, made sure that it was balanced, and ensured that the overall weight of the truck didn't exceed federal regulations.</li>
-                        <li>Maintained a log of working hours to be in compliance with state and federal laws.</li>
-                        <li>Inspected my truck daily to ensure that any mechanical problems were fixed before driving.</li>
-                    </ul>
-                    <div className="d-flex flex-row justify-content-between flex-wrap">
-                        <div>
-                            <p className="mb-0"><strong>Internal Revenue Service</strong></p>
-                            <p className="mb-0">Contact Representative</p>
-                        </div>
-                        <div className="d-flex flex-row flex-wrap">
-                            <p><strong>11-2009 -</strong></p>
-                            <p><strong className="mx-1">10-2018</strong></p>
-                        </div>
-                    </div>
-                    <ul>
-                        <li>Conducted telephone interviews with a wide range of individuals who have varying degrees of understanding of tax requirements.</li>
-                        <li>Provided procedural explanations to specific inquiries initiated by the individual.</li>
-                        <li>Referred and or transfers callers to the appropriate area for resolution and closure of issues that are beyond the training and scope of the Contact Representative's position.</li>
-                        <li>Responsible for taking notes during team meetings then typing out those notes for distribution among the team.</li>
-                        <li>Gave occasional classes on various procedures and command codes during team meetings.</li>
-                        <li>Assisted taxpayers with setting up installment agreements in order to settle their outstanding tax liability.</li>
-                    </ul>
-                </div>
-                <p><u><strong>Education</strong></u></p>
-                <div className="zs-indent mb-5">
-                    <div className="d-flex flex-row justify-content-between">
-                        <p className="mb-0"><strong>Bellevue College</strong></p>
-                        <div className="d-flex flex-row">
-                            <p className="mb-0"><strong>09-2003 -</strong></p>
-                            <p className="mb-0 mx-1"><strong>03-2006</strong></p>
-                        </div>
-                    </div>
-                    <ul>
-                        <li>Associate of Arts - AA, General Studies</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
         </div>
     )
 }
