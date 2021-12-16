@@ -14,6 +14,7 @@ import AdminNav from "./pages/AdminNav/AdminNav"
 import EditProfile from "./pages/EditProfile/EditProfile"
 import EditPortfolio from "./pages/EditPortfolio/EditPortfolio";
 import EditResume from "./pages/EditResume/EditResume";
+import ProjectDetails from "./pages/ProjectDetails/ProjectDetails"
 
 const App = () => {
     const [user, setUser] = useState({})
@@ -75,6 +76,14 @@ const App = () => {
                             <>
                                 <AdminNav />
                                 <EditPortfolio />
+                            </>
+                        }/>
+                    </Route>
+                    <Route exaxt path="/editportfolio/:id" element={<AuthRoute/>}>
+                        <Route exact path="/editportfolio/:id" element={
+                            <>
+                                <AdminNav />
+                                <ProjectDetails />
                             </>
                         }/>
                     </Route>

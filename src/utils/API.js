@@ -41,6 +41,26 @@ const API = {
         return axios.post(`${URL_PREFIX}/api/users/password`, data, {headers:{
             "Authorization": `Bearer ${tkn}`
         }})
+    },
+    findProject:(id,tkn)=>{
+        return axios.get(`${URL_PREFIX}/api/projects/${id}`, {headers:{
+            "Authorization": `Bearer ${tkn}`
+        }})
+    },
+    editProject:(data,tkn)=>{
+        return axios.put(`${URL_PREFIX}/api/projects`, data, {headers:{
+            "Authorization": `Bearer ${tkn}`
+        }})
+    },
+    newProject:(data,tkn)=>{
+        return axios.post(`${URL_PREFIX}/api/projects`, data, {headers:{
+            "Authorization": `Bearer ${tkn}`
+        }})
+    },
+    deleteProject:(id,tkn)=>{
+        return axios.delete(`${URL_PREFIX}/api/projects/${id}`, {headers:{
+            "Authorization": `Bearer ${tkn}`
+        }})
     }
 }
 
