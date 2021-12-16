@@ -31,6 +31,16 @@ const API = {
     },
     getDegree:(id)=>{
         return axios.get(`${URL_PREFIX}/api/resumes/degree/${id}`)
+    },
+    editUser:(data,tkn)=>{
+        return axios.put(`${URL_PREFIX}/api/users`, data, {headers:{
+            "Authorization": `Bearer: ${tkn}`
+        }})
+    },
+    changePassword:(data,tkn)=>{
+        return axios.post(`${URL_PREFIX}/api/users/password`, data, {headers:{
+            "Authorization": `Bearer ${tkn}`
+        }})
     }
 }
 

@@ -19,6 +19,7 @@ Dependencies:
 - Emailjs-com
 - Jwt-decode
 - React
+- React-bootstrap
 - React-dom
 - React-router-dom
 - React-scripts
